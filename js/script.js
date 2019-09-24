@@ -26,7 +26,6 @@ for (i = 0; i < 8; i++) {
     quote.quote =
       "If you just work on stuff that you like and you’re passionate about, you don’t have to have a master plan with how things will play out.";
     quote.source = "Mark Zuckerberg";
-    quote.citation = "www.goodreads.com";
     quote.year = "2016";
   } else if (i === 1) {
     quote.quote =
@@ -39,18 +38,15 @@ for (i = 0; i < 8; i++) {
     quote.quote =
       "Strength does not come from physical capacity. It comes from an indomitable will.";
     quote.source = "Mahatma Ghandi";
-    quote.citation = "www.biography.com";
     quote.year = "1932";
   } else if (i === 3) {
     quote.quote =
       "Nothing is a greater stranger to my breast, or a sin that my soul more abhors, than that black and detestable one, ingratitude.";
     quote.source = "George Washington";
-    quote.citation = "www.notable-quotes.com";
     quote.year = "1754";
   } else if (i === 4) {
     quote.quote = "All men are by nature born equally free and independent.";
     quote.source = "George Mason";
-    quote.citation = "www.brainyquote.com";
     quote.year = "1749";
   } else if (i === 5) {
     quote.quote =
@@ -66,7 +62,6 @@ for (i = 0; i < 8; i++) {
   } else if (i === 7) {
     quote.quote = "You are what you do, not what you say.";
     quote.source = "Carl Jung";
-    quote.citation = "www.goalcast.com";
     quote.year = "1934";
   }
   quotes.push(quote);
