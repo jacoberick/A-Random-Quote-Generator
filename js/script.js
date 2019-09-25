@@ -115,11 +115,20 @@ function randBgCol() {
 }
 
 /***
-  When the "Show another quote" button is clicked, the event listener
-  below will be triggered, and it will call, or "invoke", the `printQuote`
-  and the `randBgCol` function.
+  The event listeners below listen for a 'click' on btn and then invoke
+  the `randBgCol` and `printQuote` functions.
 ***/
 
 let btn = document.getElementById("loadQuote");
 btn.addEventListener("click", randBgCol);
 btn.addEventListener("click", printQuote, false);
+
+/***
+  This setInterval method triggers `randBgCol` and `printQuote`
+  functions after 30 seconds.
+***/
+
+setInterval(function() {
+  randBgCol();
+  printQuote();
+}, 30000);
