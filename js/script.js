@@ -70,9 +70,9 @@ for (i = 0; i < 8; i++) {
 }
 
 /***
-  function getRandomQuote selects a random quote from the quotes array.
-    randInt calculates a random integer and is then used to select a quote by its index from the quotes array.
-    randInt is then stored in the getRandomQuote function.
+  function `getRandomQuote` selects a random quote from the quotes array.
+    `randInt` calculates a random integer and is then used to select a quote by its index from the quotes array.
+    `randInt` is then stored in the `getRandomQuote` function.
 ***/
 
 function getRandomQuote() {
@@ -81,9 +81,9 @@ function getRandomQuote() {
 }
 
 /***
-  function printQuote takes the randomized quote and prints it to the HTML.
-    let randomQuote stores the selected quote information.
-    let string parses together the quote and its affiliated information that will be printed in the HTML.
+  function `printQuote` takes the randomized quote and prints it to the HTML.
+    let `randomQuote` stores the selected quote information.
+    let `string` parses together the quote and its affiliated information that will be printed in the HTML.
 ***/
 
 function printQuote() {
@@ -102,14 +102,24 @@ function printQuote() {
 }
 
 /***
-  When the "Show another quote" button is clicked, the event listener
-  below will be triggered, and it will call, or "invoke", the `printQuote`
-  function. So do not make any changes to the line of code below this
-  comment.
+  function `randCol` randomly selects a color by generating three values for a RGB value.
+  it then compiles these values into a working RGB value and sets the background color to that RGB.
 ***/
 
-document
-  .getElementById("loadQuote")
-  .addEventListener("click", printQuote, false);
+function randBgCol() {
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  let bgRGB = `rgb(${r},${g},${b})`;
+  document.body.style.background = bgRGB;
+}
 
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
+/***
+  When the "Show another quote" button is clicked, the event listener
+  below will be triggered, and it will call, or "invoke", the `printQuote`
+  and the `randBgCol` function.
+***/
+
+let btn = document.getElementById("loadQuote");
+btn.addEventListener("click", randBgCol);
+btn.addEventListener("click", printQuote, false);
