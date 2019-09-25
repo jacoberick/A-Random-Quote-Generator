@@ -13,13 +13,15 @@ let quotes = [];
 for (i = 0; i < 8; i++) {
   let quote = {
     quote: "",
-    source: ""
+    source: "",
+    tag: ""
   };
   if (i === 0) {
     quote.quote =
       "If you just work on stuff that you like and you’re passionate about, you don’t have to have a master plan with how things will play out.";
     quote.source = "Mark Zuckerberg";
     quote.year = "2016";
+    quote.tag = "Entrepreneurs";
   } else if (i === 1) {
     quote.quote =
       "Intelligence plus character—that is the goal of true education.";
@@ -27,35 +29,42 @@ for (i = 0; i < 8; i++) {
     quote.citation =
       "“The Purpose of Education” from Morehouse College student newspaper, The Maroon Tiger";
     quote.year = "1947";
+    quote.tag = "Historical Figures";
   } else if (i === 2) {
     quote.quote =
       "Strength does not come from physical capacity. It comes from an indomitable will.";
     quote.source = "Mahatma Ghandi";
     quote.year = "1932";
+    quote.tag = "Historical Figures";
   } else if (i === 3) {
     quote.quote =
       "Nothing is a greater stranger to my breast, or a sin that my soul more abhors, than that black and detestable one, ingratitude.";
     quote.source = "George Washington";
     quote.year = "1754";
+    quote.tag = "Historical Figures";
   } else if (i === 4) {
     quote.quote = "All men are by nature born equally free and independent.";
     quote.source = "George Mason";
     quote.year = "1749";
+    quote.tag = "Historical Figures";
   } else if (i === 5) {
     quote.quote =
       "There’s some real utility in gratitude. It’s also good protection against the dangers of victimhood and resentment.";
     quote.source = "Jordan Peterson";
     quote.citation = "12 Rules for Life: An Antidote to Chaos";
     quote.year = "2018";
+    quote.tag = "Psychologist";
   } else if (i === 6) {
     quote.quote = "The truth is not for all men, but for those who seek it.";
     quote.source = "Ayn Rand";
     quote.citation = "Atlas Shrugged";
     quote.year = "1957";
+    quote.tag = "Philosophers";
   } else if (i === 7) {
     quote.quote = "You are what you do, not what you say.";
     quote.source = "Carl Jung";
     quote.year = "1934";
+    quote.tag = "Psychologist";
   }
   quotes.push(quote);
 }
@@ -86,8 +95,9 @@ function printQuote() {
     string += `<span class="citation"> ${randomQuote.citation} </span>`;
   }
   if ("year" in randomQuote) {
-    string += `<span class="year"> ${randomQuote.year} </span> </p>`;
+    string += `<span class="year"> ${randomQuote.year} </span>`;
   }
+  string += `, in <span class='tag'>  ${randomQuote.tag} </span> </p>`;
   document.getElementById("quote-box").innerHTML = string;
 }
 

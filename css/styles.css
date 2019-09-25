@@ -1,4 +1,4 @@
-/** 
+/**
  * Treehouse FSJS Techdegree
  * Random Quote Generator - CSS
  */
@@ -6,7 +6,7 @@
 body {
   background-color: #36b55c;
   color: white;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 #quote-box {
@@ -15,7 +15,7 @@ body {
   left: 10%;
   right: 10%;
   width: 80%;
-  line-height: .5;
+  line-height: 0.5;
 }
 
 .quote {
@@ -26,22 +26,23 @@ body {
   margin: 0;
 }
 
-.quote:before, .quote:after {
+.quote::before,
+.quote::after {
   font-size: 3rem;
   line-height: 2.5rem;
   position: absolute;
 }
 
-.quote:before {
+.quote::before {
   content: "“";
-  top: .25em;
-  left: -.5em;
+  top: 0.25em;
+  left: -0.5em;
 }
 
-.quote:after {
+.quote::after {
   content: "”";
-  bottom: -.1em;
-  margin-left: .1em;
+  bottom: -0.1em;
+  margin-left: 0.1em;
   position: absolute;
 }
 
@@ -53,7 +54,7 @@ body {
   margin-right: 4em;
 }
 
-.source:before {
+.source::before {
   content: "—";
 }
 
@@ -61,7 +62,7 @@ body {
   font-style: italic;
 }
 
-.citation:before {
+.citation::before {
   content: ", ";
   font-style: normal;
 }
@@ -69,6 +70,10 @@ body {
 .year:before {
   content: ", ";
   font-style: normal;
+}
+
+.tag {
+  text-decoration: underline;
 }
 
 #loadQuote {
@@ -83,10 +88,10 @@ body {
   color: #fff;
   background-color: #36b55c;
   padding: 15px 0;
-  transition: .5s ;
+  transition: 0.5s;
 }
 #loadQuote:hover {
-  background-color: rgba(255,255,255,.25);
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 #loadQuote:focus {
@@ -97,7 +102,8 @@ body {
   .quote {
     font-size: 4rem;
   }
-  .quote:before, .quote:after {
+  .quote:before,
+  .quote:after {
     font-size: 6rem;
   }
   .source {
