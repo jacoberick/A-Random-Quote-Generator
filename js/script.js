@@ -4,9 +4,9 @@ project 1 - A Random Quote Generator
 ******************************************/
 
 /***
-  Array that generates 8 quote templates using a for loop.
-   Values are defined using dot notation with their corresponding properties.
-   Additional properties(ie. citation, year) are also added to the array using dot notation.
+    For loop pushes a new quote into quotes array with properties being conditional based on index.
+    Values are defined using dot notation with their corresponding properties.
+    Additional properties(ie. citation, year) are also added to the array using dot notation.
 ***/
 
 let quotes = [];
@@ -20,7 +20,7 @@ for (i = 0; i < 8; i++) {
     quote.quote =
       "If you just work on stuff that you like and you’re passionate about, you don’t have to have a master plan with how things will play out.";
     quote.source = "Mark Zuckerberg";
-    quote.year = "2016";
+    quote.year = 2016;
     quote.tag = "Entrepreneurs";
   } else if (i === 1) {
     quote.quote =
@@ -28,42 +28,42 @@ for (i = 0; i < 8; i++) {
     quote.source = "Dr. Martin Luther King Jr.";
     quote.citation =
       "“The Purpose of Education” from Morehouse College student newspaper, The Maroon Tiger";
-    quote.year = "1947";
+    quote.year = 1947;
     quote.tag = "Historical Figures";
   } else if (i === 2) {
     quote.quote =
       "Strength does not come from physical capacity. It comes from an indomitable will.";
     quote.source = "Mahatma Ghandi";
-    quote.year = "1932";
+    quote.year = 1932;
     quote.tag = "Historical Figures";
   } else if (i === 3) {
     quote.quote =
       "Nothing is a greater stranger to my breast, or a sin that my soul more abhors, than that black and detestable one, ingratitude.";
     quote.source = "George Washington";
-    quote.year = "1754";
+    quote.year = 1754;
     quote.tag = "Historical Figures";
   } else if (i === 4) {
     quote.quote = "All men are by nature born equally free and independent.";
     quote.source = "George Mason";
-    quote.year = "1749";
+    quote.year = 1749;
     quote.tag = "Historical Figures";
   } else if (i === 5) {
     quote.quote =
       "There’s some real utility in gratitude. It’s also good protection against the dangers of victimhood and resentment.";
     quote.source = "Jordan Peterson";
     quote.citation = "12 Rules for Life: An Antidote to Chaos";
-    quote.year = "2018";
+    quote.year = 2018;
     quote.tag = "Psychologist";
   } else if (i === 6) {
     quote.quote = "The truth is not for all men, but for those who seek it.";
     quote.source = "Ayn Rand";
     quote.citation = "Atlas Shrugged";
-    quote.year = "1957";
+    quote.year = 1957;
     quote.tag = "Philosophers";
   } else if (i === 7) {
     quote.quote = "You are what you do, not what you say.";
     quote.source = "Carl Jung";
-    quote.year = "1934";
+    quote.year = 1934;
     quote.tag = "Psychologist";
   }
   quotes.push(quote);
@@ -76,7 +76,8 @@ for (i = 0; i < 8; i++) {
 ***/
 
 function getRandomQuote() {
-  let randInt = Math.floor(Math.random() * 8);
+  let numQuotes = quotes.length;
+  let randInt = Math.floor(Math.random() * numQuotes);
   return quotes[randInt];
 }
 
@@ -103,7 +104,7 @@ function printQuote() {
 }
 
 /***
-  function `randCol` randomly selects a color by generating three values for a RGB value.
+  function `randBgCol` randomly selects a color by generating three values for a RGB value.
   it then compiles these values into a working RGB value and sets the background color to that RGB.
 ***/
 
