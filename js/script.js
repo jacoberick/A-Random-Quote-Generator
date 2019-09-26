@@ -72,7 +72,7 @@ for (i = 0; i < 8; i++) {
 /***
   function `getRandomQuote` selects a random quote from the quotes array.
     `randInt` calculates a random integer and is then used to select a quote by its index from the quotes array.
-    `randInt` is then stored in the `getRandomQuote` function.
+    the selected quote is then stored in the `getRandomQuote` function.
 ***/
 
 function getRandomQuote() {
@@ -84,6 +84,7 @@ function getRandomQuote() {
   function `printQuote` takes the randomized quote and prints it to the HTML.
     let `randomQuote` stores the selected quote information.
     let `string` parses together the quote and its affiliated information that will be printed in the HTML.
+    prints to the page using .innerHTML
 ***/
 
 function printQuote() {
@@ -115,20 +116,24 @@ function randBgCol() {
 }
 
 /***
-  The event listeners below listen for a 'click' on btn and then invoke
-  the `randBgCol` and `printQuote` functions.
+  Loads quote either on click of .btn or after 30 seconds.
+  timer resets on .btn press.
 ***/
 
 let btn = document.getElementById("loadQuote");
-btn.addEventListener("click", randBgCol);
-btn.addEventListener("click", printQuote, false);
+btn.addEventListener("click", refreshQuote);
 
-/***
-  This setInterval method triggers `randBgCol` and `printQuote`
-  functions after 30 seconds.
-***/
+let timer = setInterval(function() {
+  refreshQuote();
+}, 30000);
 
-setInterval(function() {
+function refreshQuote() {
   randBgCol();
   printQuote();
-}, 30000);
+
+  // clear initial interval if btn manually interacted with
+  clearInterval(timer);
+  timer = setInterval(function() {
+    refreshQuote();
+  }, 30000);
+}
