@@ -75,11 +75,11 @@ for (i = 0; i < 8; i++) {
     the selected quote is then stored in the `getRandomQuote` function.
 ***/
 
-function getRandomQuote() {
+const getRandomQuote = () => {
   let numQuotes = quotes.length;
   let randInt = Math.floor(Math.random() * numQuotes);
   return quotes[randInt];
-}
+};
 
 /***
   function `printQuote` takes the randomized quote and prints it to the HTML.
@@ -88,7 +88,7 @@ function getRandomQuote() {
     prints to the page using .innerHTML
 ***/
 
-function printQuote() {
+const printQuote = () => {
   let randomQuote = getRandomQuote();
   let string = ``;
   string += `<p class="quote"> ${randomQuote.quote} </p>`;
@@ -101,23 +101,23 @@ function printQuote() {
   }
   string += `, in <span class='tag'>  ${randomQuote.tag} </span> </p>`;
   document.getElementById("quote-box").innerHTML = string;
-}
+};
 
 /***
   function `randBgCol` randomly selects a color by generating three values for a RGB value.
   it then compiles these values into a working RGB value and sets the background color to that RGB.
 ***/
 
-function randBgCol() {
+const randBgCol = () => {
   let r = Math.floor(Math.random() * 256);
   let g = Math.floor(Math.random() * 256);
   let b = Math.floor(Math.random() * 256);
   let bgRGB = `rgb(${r},${g},${b})`;
   document.body.style.background = bgRGB;
-}
+};
 
 /***
-  Loads quote either on click of .btn or after 30 seconds.
+  Loads quote either on click of .btn or after 10 seconds.
   timer resets on .btn press.
 ***/
 
@@ -126,7 +126,7 @@ btn.addEventListener("click", refreshQuote);
 
 let timer = setInterval(function() {
   refreshQuote();
-}, 30000);
+}, 10000);
 
 function refreshQuote() {
   randBgCol();
@@ -136,5 +136,5 @@ function refreshQuote() {
   clearInterval(timer);
   timer = setInterval(function() {
     refreshQuote();
-  }, 30000);
+  }, 10000);
 }
